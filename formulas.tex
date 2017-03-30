@@ -1,0 +1,158 @@
+\documentclass[twocolumn, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[german,english]{babel}
+\renewcommand{\baselinestretch}{1.05}
+\usepackage{amsmath,amsthm,verbatim,amssymb,amsfonts,amscd, graphicx}
+\usepackage{graphicx}
+\usepackage{mhchem}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\i}{\mathrm{i}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\norm}[1]{\left\Vert #1 \right\Vert}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\diam}{\mathrm{diam}}
+\renewcommand{\d}[1]{\,d{#1}}
+\newcommand{\dd}[2]{\frac{d{#1}}{d{#2}}}
+\newcommand{\pd}[2]{\frac{\partial #1 }{\partial #2}}
+\usepackage{braket}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{siunitx}
+\usepackage{floatrow}
+\setlength{\columnseprule}{0.4pt}
+\thispagestyle{empty}
+%%% LENGTHS
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=10mm,
+ top=10mm,
+ right=10mm,
+ bottom=10mm
+ }
+
+\begin{document}
+%
+\section*{Formulas for Quantum Optics}
+\begin{description}
+  \item[Displacement Operator]
+\begin{align*}
+  D(\alpha) = \e^{\alpha a^{\dagger} - \alpha ^{\ast} a} = \e^{- \frac{1}{2} \abs{\alpha}^2} \e^{\alpha a ^{\dagger}} \e^{- \alpha ^{\ast} a} && D(\alpha) \Ket{0} = \Ket{\alpha} \\
+  D(\alpha) = D(-\alpha) \\
+  D(\alpha) D(\beta) = \e^{\i \Im (\alpha \beta^{\ast})} D(\alpha + \beta)
+\end{align*}
+%
+\item [Squeeze Operator] 
+\begin{align*}
+  S(\zeta) = \e^{\frac{1}{2} (\zeta {a^{\dagger}}^2 - \zeta^{\ast} a^2)} &&
+ \zeta = r \e^{i \theta} \\
+  \theta = 0 \implies \Delta X_1 ^2 = \frac{1}{4} e^{-2 r} &&  \Delta X_2 ^2 = \frac{1}{4} e^{2 r}
+\end{align*}
+%
+%
+\begin{align*}
+  \Braket{\zeta | a ^{\dagger} a | \zeta} = \sinh^2 r && \\
+  \Braket{\zeta | a | \zeta} = 0 && \\
+  \Braket{\zeta | a^2 | \zeta} = -e ^{\i \varphi} \sinh r \cosh r && \\
+  \Braket{\zeta | (a^{\dagger} a )^2 | \zeta} = 2 \cosh^2 r \sinh^2 r + \sinh^4 r
+\end{align*}
+%
+<++>
+\item[Properties of the Commutator] 
+%
+\begin{align*}
+  [A, BC] &= [A, B] C + B [A, C] \\
+  [BC, A] &= [B, A] C + B [C, A] \\
+  [A, B] &= - [B, A]
+\end{align*}
+%
+\item [Beam Splitter]
+phase shift operator
+%
+\begin{align*}
+  P(\phi) = \e^{- \i \phi \hat{n}}
+\end{align*}
+%
+
+\begin{align*}
+  a_0 = \frac{a_2 + \i a_3}{\sqrt{2}} && a_1 = \frac{a_3 - \i a_2}{\sqrt{2}} \\
+  D_0(\alpha) = D_2(\frac{\alpha}{\sqrt{2}}) D_3(\frac{- \i \alpha}{\sqrt{2}}) &&
+  D_1(\alpha) = D_3(\frac{\alpha}{\sqrt{2}}) D_2(\frac{\i \alpha}{\sqrt{2}})
+\end{align*}
+%
+%
+\item[Baker-Campbell Hausdorff Theorem] 
+\begin{align*}
+  & \e^{A + B}  = \e^A \e^B \e^{\frac{1}{2} [B, A]} = \e^B \e^A \e^{\frac{1}{2} [A, B]} \\
+  \text{ falls } & [A, [A, B]] = [B, [A, B]] = 0
+\end{align*}
+%
+  
+\item[Baker-Campbell Hausdorff Lemma] 
+
+\item[Number Operator] 
+\item[Quantum Harmonic Oscillator] $ $\\
+  Spread of Ground wave function $\sqrt{ \hbar /(m \omega)}$
+    %
+    %
+    \begin{align*}
+      E_x = E_0 (a + a^{\dagger}) \sin{k z} &&
+      B_y = - \i B_0 (a - a^{\dagger}) \cos{k z}
+    \end{align*}
+    %
+    \begin{align*}
+      H = \hbar \omega \left(\hat{n} + \frac{1}{2}\right) =
+      \frac{1}{2} \left( \frac{p}{m} + m \omega^2 q^2 \right) \\ a, a^{\dagger} = \frac{1}{\sqrt{2 \hbar m \omega}}(m \omega \hat{q} \pm \i p)
+    \end{align*}
+    %
+    %
+    \begin{align*}
+      \hat{n} = a^{\dagger} a && \hat{n} \Ket{n} = n \Ket{n} && \Ket{n} = \frac{a^{\dagger n}}{\sqrt{n!}} \Ket{0}
+    \end{align*}
+    %
+    %
+    \begin{align*}
+      a ^{\dagger} \Ket{n} &= \sqrt{n + 1} \Ket{ n + 1} & a \Ket{n} &= \sqrt{n} \Ket{n - 1} \\
+      [a^{m}, a^{\dagger}] &= m a^{m-1} & [a, a^{\dagger m}] &= m (a^{\dagger})^{m-1}  \\
+      [n, a^{m}] &= - m a^{m} & [n, a^{\dagger m}] &= m a^{\dagger m}
+    \end{align*}
+    %
+\begin{align*}
+  [a_i, a_j ^{\dagger}] = \delta_{ij} && [a_i, a_j] = [a_i^{\dagger}, a_j^{\dagger}] = 0
+\end{align*}
+%
+  \item[Quadratures]
+    %
+    \begin{align*}
+      X_1 = \frac{1}{2}\left( a + a^{\dagger} \right) \propto q &&
+      X_2 = \frac{1}{2 \i}\left( a - a^{\dagger} \right) \propto p \\
+    \end{align*}
+    %
+    
+  \item[Phase State]
+    %
+    \begin{align*}
+      P(\varphi) = \frac{1}{2 \pi} \abs{\Braket{\varphi | \psi} }^2  &&
+    \Ket{\varphi} = \sum_{n=0}^{\infty} \e^{\i n \varphi} \Ket{n}
+    \end{align*}
+    %
+    
+  \item[Coherent States]
+    %
+    \begin{align*}
+      \Ket{\alpha} = e^{- \abs{\alpha}^2 /2} \sum_{n}^{} \frac{\alpha^n}{\sqrt{n!}} \Ket{n} && \bar{n} = \abs{\alpha}^2 \\
+      \Braket{\alpha | \beta} = \e^{\frac{1}{2} (\beta ^{\ast} \alpha - \beta \alpha^{\ast})}
+      \e^{- \frac{1}{2} \abs{\beta - \alpha}^{2}}
+    \end{align*}
+    %
+
+    
+    
+  
+\end{description}
+
+
+\end{document}
