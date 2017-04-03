@@ -60,7 +60,7 @@
   \Braket{\zeta | (a^{\dagger} a )^2 | \zeta} = 2 \cosh^2 r \sinh^2 r + \sinh^4 r
 \end{align*}
 %
-<++>
+
 \item[Properties of the Commutator] 
 %
 \begin{align*}
@@ -76,11 +76,10 @@ phase shift operator
   P(\phi) = \e^{- \i \phi \hat{n}}
 \end{align*}
 %
-
 \begin{align*}
-  a_0 = \frac{a_2 + \i a_3}{\sqrt{2}} && a_1 = \frac{a_3 - \i a_2}{\sqrt{2}} \\
-  D_0(\alpha) = D_2(\frac{\alpha}{\sqrt{2}}) D_3(\frac{- \i \alpha}{\sqrt{2}}) &&
-  D_1(\alpha) = D_3(\frac{\alpha}{\sqrt{2}}) D_2(\frac{\i \alpha}{\sqrt{2}})
+  a_0 & = \frac{a_2 - \i a_3}{\sqrt{2}} & a_1 & = \frac{a_3 - \i a_2}{\sqrt{2}} \\
+  D_0(\alpha) & = D_2(\frac{\alpha}{\sqrt{2}}) D_3(\frac{- \i \alpha}{\sqrt{2}}) \\
+  D_1(\alpha) & = D_3(\frac{\alpha}{\sqrt{2}}) D_2(\frac{\i \alpha}{\sqrt{2}})
 \end{align*}
 %
 %
@@ -145,13 +144,55 @@ phase shift operator
     \begin{align*}
       \Ket{\alpha} = e^{- \abs{\alpha}^2 /2} \sum_{n}^{} \frac{\alpha^n}{\sqrt{n!}} \Ket{n} && \bar{n} = \abs{\alpha}^2 \\
       \Braket{\alpha | \beta} = \e^{\frac{1}{2} (\beta ^{\ast} \alpha - \beta \alpha^{\ast})}
-      \e^{- \frac{1}{2} \abs{\beta - \alpha}^{2}}
+      \e^{- \frac{1}{2} \abs{\beta - \alpha}^{2}} && a \Ket{\alpha} = \alpha \Ket{\alpha} 
     \end{align*}
     %
-
+  \item[Characteristic Functions]
+    %
+    \begin{align*}
+      & W(\alpha, \alpha ^{\ast}) = \frac{2}{\pi^2} \e^{2 \abs{\alpha}^2}
+      \int \d{^2 \eta} \Braket{- \eta | \rho | \eta} \e^{-2 (\eta \alpha ^{\ast} - \eta^{\ast} \alpha)} \\
+      & Q(\alpha, \alpha^{\ast}) = \frac{1}{\pi} \Braket{\alpha | \rho | \alpha}
+    \end{align*}
+    %
+  \item [Correlation Functions]
+    %
+    \begin{align*}
+      \hat{E}^+(\vec{r}, t) = \i \epsilon_0/2 a \e^{-\i (\omega t - \vec{k} \vec{r})}
+      && \hat{E}^- = \hat{E^+} ^{\dagger}
+    \end{align*}
+    %
+    \begin{align*}
+      g^{(1)}(\tau) & = \frac{\Braket{E^-(t) E^+(t+\tau)}}{\Braket{E^-(t) E^+(t)}} \\
+      g^{(2)}(\tau) & = \frac{\Braket{E^-(t) E^-(t + \tau) E^+(t + \tau) E^+(\tau) }}{\Braket{E^-(t) E^+(t)}^2}
+    \end{align*}
+    %
+    %
+    \begin{align*}
+      Q = \Braket{\hat{n}} (g^{(2)}(0) - 1)
+    \end{align*}
+    %
+  \item[Bloch Equations]
+    %
+    %
+    \begin{align*}
+      \sigma_+ = \Ket{e}\Bra{g} && \sigma_- = \Ket{g}\Bra{e} && \sigma_3 = \Ket{e}\Bra{e} - \Ket{g}\Bra{g}
+    \end{align*}
+    %
     
+    \begin{align*}
+      u = 2 \Re (\rho_{12}) && v = 2 \Im(\rho_{12}) && w = \rho_{11} - \rho_{22}
+    \end{align*}
+    %
+    %
+    \begin{align*}
+      W = \Omega \vec{e}_1 + \Delta \vec{e}_3 \text{ Precession around this vector} \\
+\Delta = \omega_L - \omega_0
+    \end{align*}
+    %
     
-  
+    %
+    
 \end{description}
 
 
